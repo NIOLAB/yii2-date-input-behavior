@@ -13,7 +13,7 @@ Add the behavior to your ActiveRecord.
 ```php
  return [
     [
-        'class' => 'NIOLAB\dateinput\DateAttributeBehavior',
+        'class' => 'NIOLAB\dateinput\DateInputBehavior',
         'inputFormat' => 'dd-MM-y',
        // 'dateInputSuffix' => '__date_input', 
         'dateAttributes' => [

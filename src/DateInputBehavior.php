@@ -11,7 +11,7 @@ use yii\db\ActiveRecord;
 use yii\validators\SafeValidator;
 use yii\validators\Validator;
 
-class DateAttributeBehavior extends Behavior
+class DateInputBehavior extends Behavior
 {
 
     public $dateInputSuffix = '__date_input';

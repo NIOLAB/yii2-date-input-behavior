@@ -25,7 +25,7 @@ Add the behavior to your ActiveRecord.
 
 
 ### Use it in your form
-The behavior adds an attribute with a suffix `__date_input` to your model which can be used in forms. In this example, the attribute `published_from__date_input` is now available.
+The behavior adds an attribute with a suffix `__date_input` to your model for each attribute defined in `dateAttributes` above. These can be used in forms. In this example, the attribute `published_from__date_input` is created.
 
 Use it in your form with any kind of input, the example here uses a DatePicker widget.
 

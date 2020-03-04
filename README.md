@@ -46,3 +46,5 @@ The behavior performs magic (for each attribute in `dateAttributes`):
 - It adds a virtual attribute `<original_attribute>__date_input` to your model. This attribute contains the human readable formatted date (set on `ActiveRecord::EVENT_AFTER_FIND`)
 - It adds a 'safe' validation rule for this attribute so it can be used in massive assignment.
 - It updates the original date attribute with the timestamp value of the `<original_attribute>__date_input` virtual attribute on `ActiveRecord::EVENT_BEFORE_VALIDATE`.
+
+The virtual attributes are created by extending the magic functions `__get()` and `__set()` and by adding them to the behavior's `canSetProperty` and `canGetProperty` functions. Hacking Yii2!

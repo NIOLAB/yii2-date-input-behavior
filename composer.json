@@ -1,0 +1,24 @@
+{
+  "name": "niolab/yii2-date-input-behavior",
+  "description": "Yii2 Date Input Behavior",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2"
+  ],
+  "license": "MIT",
+  "authors": [
+     {
+      "name": "Harry Doddema",
+      "email": "harry@niomail.nl",
+      "role": "Senior Developer"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.14"
+  },
+  "autoload": {
+    "psr-4": {
+      "NIOLAB\\dateinput\\": "src"
+    }
+  }
+}

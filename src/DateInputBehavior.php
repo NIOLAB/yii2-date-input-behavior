@@ -141,7 +141,7 @@ class DateInputBehavior extends Behavior
             $inputAttribute = $dateAttribute . $this->dateInputSuffix;
             if ($this->owner->$dateAttribute) {
                 $this->owner->$inputAttribute = $this->toFormattedDate($this->owner->$dateAttribute);
-            } else {
+            } elseif (!$this->owner->isNewRecord) {
                 $this->owner->$inputAttribute = null;
             }
         }

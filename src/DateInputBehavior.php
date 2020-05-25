@@ -153,7 +153,11 @@ class DateInputBehavior extends Behavior
         foreach ($this->dateAttributes as $dateAttribute) {
             $inputAttribute = $dateAttribute . $this->dateInputSuffix;
             if ($this->owner->$inputAttribute !== null) {
-                $this->owner->$dateAttribute = $this->toTimestamp($this->owner->$inputAttribute);
+                if (empty($this->owner->$inputAttribute)) {
+                    $this->owner->$dateAttribute = null;
+                } else {
+                    $this->owner->$dateAttribute = $this->toTimestamp($this->owner->$inputAttribute);
+                }
             }
         }
     }

@@ -139,7 +139,7 @@ class DateInputBehavior extends Behavior
     {
         foreach ($this->dateAttributes as $dateAttribute) {
             $inputAttribute = $dateAttribute . $this->dateInputSuffix;
-            if ($this->owner->$dateAttribute) {
+            if ($this->owner->$dateAttribute !== null) {
                 $this->owner->$inputAttribute = $this->toFormattedDate($this->owner->$dateAttribute);
             } elseif (!$this->owner->isNewRecord) {
                 $this->owner->$inputAttribute = null;
@@ -152,10 +152,8 @@ class DateInputBehavior extends Behavior
 
         foreach ($this->dateAttributes as $dateAttribute) {
             $inputAttribute = $dateAttribute . $this->dateInputSuffix;
-            if ($this->owner->$inputAttribute) {
+            if ($this->owner->$inputAttribute !== null) {
                 $this->owner->$dateAttribute = $this->toTimestamp($this->owner->$inputAttribute);
-            } else {
-                $this->owner->$dateAttribute = null;
             }
         }
     }

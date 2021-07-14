@@ -15,6 +15,8 @@ class DateInputBehavior extends Behavior
 {
 
     public $dateInputSuffix = '__date_input';
+    /** @var array Array of model scenarios under which to disable this behavior */
+    public $except = [];
     protected $inputs = [];
 
     /**
@@ -149,7 +151,9 @@ class DateInputBehavior extends Behavior
 
     public function beforeValidate($event)
     {
-
+        if (in_array($this->owner->scenario,$this->except)) {
+            return;
+        }
         foreach ($this->dateAttributes as $dateAttribute) {
             $inputAttribute = $dateAttribute . $this->dateInputSuffix;
             if ($this->owner->$inputAttribute !== null) {

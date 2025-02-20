@@ -141,12 +141,6 @@ class DateInputBehavior extends Behavior
 
     public function afterFind($event)
     {
-        if (in_array($this->owner->scenario,$this->except, true)) {
-            return;
-        }
-        if (count($this->only) > 0 && !in_array($this->owner->scenario, $this->only, true)) {
-            return;
-        }
         foreach ($this->dateAttributes as $dateAttribute) {
             $inputAttribute = $dateAttribute . $this->dateInputSuffix;
             if ($this->owner->$dateAttribute !== null) {
